@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품등록하기</title>
+</head>
+<body>
+    <div id="header">
+        <div class="header-inner">
+          <h1 class="header-logo"><a href="/"><img src="/resources/img/logo.png" alt="콘시네마"></a></h1>
+          <div id="gnb">
+            <h2 class="blind">대표메뉴</h2>
+            <ul class="nav">
+              <li><a href="/introduction">3조</a></li>
+              <li><a href="/contents/movie">상영작</a></li>
+              <li><a href="/board/mainlistAll">공지사항</a></li>
+            </ul>
+          </div>
+          <ul class="user-menu">
+            <c:choose>
+              <c:when test="${empty login}">
+                <li> <a href="/member/login">로그인</a></li>
+                <li> <a href="/member/agree">회원가입</a></li>
+              </c:when>
+              <c:otherwise>
+                <li><a href="/member/mypage"> ${login.name}님 </a>
+                <li><a href="/logout"> 로그아웃 </a>
+                <li><a href="/member/mypage"> 마이페이지</a>
+              </c:otherwise>
+            </c:choose>
+          </ul>
+        </div>
+      </div>
+
+
+</body>
+</html>

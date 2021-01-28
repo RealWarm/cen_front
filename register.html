@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>나라중고장터</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="header-inner">
+            <h1 class="header-logo"><a href="/"><img src="img/kor_userd1.PNG" alt="나라중고장터" width="300px" height="80"></a></h1>
+            <div id="gnb">
+                <h2 class="blind">대표메뉴</h2>
+                    <ul class="nav">
+                        <li><a href="javascript:void(0)">로그인</a></li>
+                        <li><a href="javascript:void(0)">아이디 찾기</a></li>
+                        <li><a href="javascript:void(0)">비밀번호 찾기</a></li>
+                    </ul>
+            </div>
+            <ul class="user-menu">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-join-wrap">
+        <form class="join-form" action="#" method="POST">
+            <div class="join-title-main">
+                <h2 class="join-title">회원가입</h2>
+            </div>
+            <div class="join-insert-wrap">
+                <table class="join-table">
+                    <caption class="blind">회원가입 정보입력</caption>
+                    <colgroup>
+                        <col style="width:20%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <label for="user_id">*아이디</label>
+                            </th>
+                            <td>
+                                <input type="text" title="아이디" id="user_id" name="" maxlength="12" required="">
+                                <button class="check-bt">중복확인</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="user_pw">*비밀번호</label></th>
+                            <td>
+                                <input type="password" title="아이디" id="user_pw" name="" required="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="user_check_pw">*비밀번호 확인</label></th>
+                            <td>
+                                <input type="password" title="비밀번호 확인" id="user_check_pw" name="" required="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="user_name">*이름</label></th>
+                            <td>
+                                <input type="text" title="이름" id="user_name" name="" required="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="user_phone">*휴대폰</label></th>
+                            <td>
+                                <input type="phone" title="휴대폰" id="user_phone" name="" required="">
+                            </td>                        
+                        <tr>
+                            <th scope="row"><label for="user_email">*이메일</label></th>
+                            <td>
+                                <input type="email" id="user_email" name="" required="" placeholder='joe@example.com'>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="join-button-wrap">
+                <input type="submit" value="회원가입" class="join-button join-submit">
+                <input type="reset" value="취소" class="join-button">
+            </div>
+        </form>
+    </div>
+    <div id="footer">
+        <div class="footer-inner">
+            <div class="footer-menu-area">
+                <h4 class="blind">하단메뉴</h4>
+                <ul class="fnb">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                </ul>
+            </div>
+            <div class="footer-address">
+                <p class="address-text">서울특별시 강남구 도산대로 156, 2층 메가박스중앙(주) (논현동, 중앙엠앤비사옥)</p>
+                <p class="address-text">제작자 홍길동 홍길동</p>
+            </div>
+            <div class="footer-copyright"><span>Copyright 2019 by acorn, Inc. All rights reserved</span></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
