@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="img/shopping.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/resources/css/saleRegist.css">
+    <title>나라중고장터</title>
+</head>
+
+<body>
+    <div class="info__container">
+        <!-- Top Title -->
+        <section class="top__title">
+            <div class="tag__name__top">
+                <h2 id="main__name">기본정보</h2><span class="tag__star__main"> *필수항목</span>
+            </div>
+        </section>
+        <hr class="main__hr">
+
+        <!-- 중앙입력란 -->
+        <form class="sale__regist__form" method="POST" action="/sale/saleregist" enctype="multipart/form-data">
+            <div class="info__container_inner">
+                <table class="">
+                    <tbody>
+                        <!-- Title -->
+                        <tr>
+                            <th><label for="title_input">제 목<span class="tag__star">*</span></label></th>
+                            <th><input type="text" name="sb_name" id="title_input"></th>
+                        </tr>
+
+                        <!-- Details -->
+                        <tr>
+                            <th><label for="tag__details">세부사항</label></th>
+                            <th><textarea name="sb_detail" id="tag__details" cols="50" rows="5"></textarea></th>
+                        </tr>
+                        <!-- price -->
+                        <tr>
+                            <th><label for="title_input">가 격<span class="tag__star">*</span></label></th>
+                            <th><input type="text" id="price" name="Total_price"></th>
+                        </tr>
+                        <!-- quantity -->
+                        <tr>
+                            <th><label for="quantity">수 량<span class="tag__star">*</span></label></th>
+                            <th><input type="text" name="Total_quantity" id="quantity"></th>
+                        </tr>
+                        <!-- Category -->
+                        <tr>
+                            <th><label for="">카테고리<span class="tag__star">*</span></label></th>
+                            <th class="category__box" style="display: flex;">
+                                <dl>
+                                    <dd>
+                                        <ul>
+                                            <li><button>1</button></li>
+                                            <li><button>1</button></li>
+                                            <li><button>1</button></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dd>
+                                        <ul>
+                                            <li><button>1</button></li>
+                                            <li><button>1</button></li>
+                                            <li><button>1</button></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dd>
+                                        <ul>
+                                            <li><button>1</button></li>
+                                            <li><button>1</button></li>
+                                            <li><button>1</button></li>
+                                        </ul>
+                                    </dd>
+                                </dl>
+                            </th>
+                            
+                        </tr>
+                        <!-- Address -->
+
+                        <!-- Trade_Type -->
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+        </form>
+
+    </div>
+
+
+
+
+</body>
+
+</html>

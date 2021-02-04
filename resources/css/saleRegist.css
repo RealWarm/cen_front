@@ -78,10 +78,11 @@ ul {
 
 /* Typhography */
 .tag__name{
-    margin: 0;
+    margin: 0px;
     position: relative;    
     box-sizing : border-box;
     top: 5px;
+    text-align: center;    
 }
 
 .tag__star{
@@ -136,7 +137,7 @@ ul {
 
 /* Title */
 .title{
-    margin: 0px;
+    /* margin: 0px; */
     display: flex;    
 }
 
@@ -161,12 +162,12 @@ ul {
 /* price */
 .price{
     display: flex;
-    
+    height: 20px;
 }
 
 #price{
     width: var(--box-input-wsmall);
-    height: 40px;
+    /* height: 40px; */
 }
 
 /* quantity */
