@@ -3,80 +3,82 @@ $(document).ready(function () {
   var idReg = /^[A-za-z0-9]{5,15}/g;
   var pwReg = /^[a-zA-Z0-9]{6,10}$/;
   var nameReg = /^[가-힣]+$/;
-  var nicknameReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/  
-  var emailReg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/
-  $('.join-submit').on('click', function (event) {
-    // event.preventDefault();
+  var nicknameReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/;
+  var emailReg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+  var phnumReg = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+  
+  // $('.join-submit').on('click', function (event) {
+  //   // event.preventDefault();
 
-    //아아디
-    if ($("#id").val() == "") {
-      $("#id").focus();
-      return false;
-    }
-    //아이디 테스트
-    if (!idReg.test($("#id").val())) {
-      $("#id").focus();
-      return false;
-    }
+  //   //아아디
+  //   if ($("#id").val() == "") {
+  //     $("#id").focus();
+  //     return false;
+  //   }
+  //   //아이디 테스트
+  //   if (!idReg.test($("#id").val())) {
+  //     $("#id").focus();
+  //     return false;
+  //   }
 
-    //비밀번호
-    if (!pwReg.test($("#password").val())) {
-      $("#password").focus();
-      return false;
-    }
-    //비밀번호 확인
-    if ($("#password").val() !== $("#passwordCheck").val()) {
-      $("#passwordCheck").focus();
-      return false;
-    }
-    // 아이디랑 비밀번호랑 같은지
-    if ($("#id").val() == ($("#password").val())) {
-      $("#password").focus();
-      return false;
-    }
-    //이름
-    if (!nameReg.test($("#name").val())) {
-      $("#name").focus();
-      return false;
-    }
+  //   //비밀번호
+  //   if (!pwReg.test($("#password").val())) {
+  //     $("#password").focus();
+  //     return false;
+  //   }
+  //   //비밀번호 확인
+  //   if ($("#password").val() !== $("#passwordCheck").val()) {
+  //     $("#passwordCheck").focus();
+  //     return false;
+  //   }
+  //   // 아이디랑 비밀번호랑 같은지
+  //   if ($("#id").val() == ($("#password").val())) {
+  //     $("#password").focus();
+  //     return false;
+  //   }
+  //   //이름
+  //   if (!nameReg.test($("#name").val())) {
+  //     $("#name").focus();
+  //     return false;
+  //   }
 
-    //이메일
-    if (!emailReg.test($("#email").val())) {
-      //  $("#email").val("");
-      $("#email").focus();
-      return false;
-    }
-    if ($("#CertiFicationNumber").val() == "") {
-      $("#CertiFicationNumber").focus();
-      return false;
-    } else {
-      $("#emailMessage").hide();
-    }
+  //   //이메일
+  //   if (!emailReg.test($("#email").val())) {
+  //     //  $("#email").val("");
+  //     $("#email").focus();
+  //     return false;
+  //   }
+  //   if ($("#CertiFicationNumber").val() == "") {
+  //     $("#CertiFicationNumber").focus();
+  //     return false;
+  //   } else {
+  //     $("#emailMessage").hide();
+  //   }
 
-    if ($("#CertiFicationNumber").val() !== "") {
-      var authenNum = $('#CertiFicationNumber').val();
-      $.ajax({
-        url: "/member/authen",
-        type: "post",
-        data: {
-          "authenNum": authenNum
-        },
-        success: function (data) {
-          if (data == 1) {
+  //   if ($("#CertiFicationNumber").val() !== "") {
+  //     var authenNum = $('#CertiFicationNumber').val();
+  //     $.ajax({
+  //       url: "/member/authen",
+  //       type: "post",
+  //       data: {
+  //         "authenNum": authenNum
+  //       },
+  //       success: function (data) {
+  //         if (data == 1) {
 
-            $('.join-form').submit();
-          } else {
-            $("#CertiFicationNumber").val("");
-            alert("인증번호를 정확히 입력해주세요.");
-            return false;
-          }
-        },
-        error: function () {
-          console.log("실패")
-        }
-      })
-    }
-  });
+  //           $('.join-form').submit();
+  //         } else {
+  //           $("#CertiFicationNumber").val("");
+  //           alert("인증번호를 정확히 입력해주세요.");
+  //           return false;
+  //         }
+  //       },
+  //       error: function () {
+  //         console.log("실패")
+  //       }
+  //     })
+  //   }
+  // });
   //회원가입 전송
 
   //======================================================================================================================//
@@ -203,6 +205,21 @@ $(document).ready(function () {
       return false;
     } else {
       $("#nameMessage").hide();
+      return false;
+    }
+  });
+
+  $('#phnum').on('blur', function (event) {
+    if ($('#phnum').val() == "") {
+      $("#phnumMessage").show();
+      $("#phnumMessage").text("휴대폰 번호를 입력해주세요.");
+      return false;
+    } else if (!phnumReg.test($("#phnum").val())) {
+      $("#phnumMessage").show();
+      $("#phnumMessage").text("휴대폰 번호 형식에 맞지 않습니다.");
+      return false;
+    } else {
+      $("#phnumMessage").hide();
       return false;
     }
   });
