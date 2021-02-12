@@ -6,3 +6,18 @@
 body {
   padding-top: 56px;  
 }
+
+
+.reply_body{
+  padding: 0 15px 15px 15px;
+}
+
+#reply_form{
+  width: 100%;
+  height: 60px;
+  resize: none;
+}
+
+
+
+

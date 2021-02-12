@@ -103,11 +103,16 @@
 
 
 
-
+        <!-- item detail -->
         <div class="card mt-4">          
           <div class="card-body">
             <h3 class="card-title">Product Name</h3>
             <h4>$24.99</h4>
+            <!-- 찜하기 -->
+            <form class="book_markform">
+              <button type="submit" class="btn btn-success">상품 찜하기</button>
+            </form>
+            <hr>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
             <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
             4.0 stars
@@ -128,9 +133,18 @@
             <hr>
             <p>믿고사길 잘했어요 혹시나 또파신다면 또 사고 싶어요</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <a href="#" class="btn btn-success">Leave a Review</a>
+            <hr>            
           </div>
+
+          <!-- 댓글달기 -->
+          <div class="reply_body">
+            <form class="reply_form" method="POST" action="/member/reply" enctype="multipart/form-data">
+                <input type="hidden" name="sb_num" value="${detail.sb_num}">
+                <textarea name="sb_detail" id="reply_form" cols="30" rows="10" placeholder="댓글을 입력하세요."></textarea>
+                <button type="submit" class="btn btn-success">댓글등록</button>
+            </form>            
+          </div><!-- 댓글달기 -->
+
         </div>
         <!-- /.card -->
 
