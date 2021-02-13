@@ -1,85 +1,110 @@
 $(document).ready(function () {
-	
-  var idReg = /^[A-za-z0-9]{5,15}/g;
+
+  var idReg = /^[a-zA-Z0-9]{6,10}$/;
   var pwReg = /^[a-zA-Z0-9]{6,10}$/;
   var nameReg = /^[가-힣]+$/;
   var nicknameReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/;
   var emailReg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
   var phnumReg = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
-  
-  // $('.join-submit').on('click', function (event) {
-  //   // event.preventDefault();
 
-  //   //아아디
-  //   if ($("#id").val() == "") {
-  //     $("#id").focus();
-  //     return false;
-  //   }
-  //   //아이디 테스트
-  //   if (!idReg.test($("#id").val())) {
-  //     $("#id").focus();
-  //     return false;
-  //   }
+  $('.join-submit').on('click', function (event) {
+    // event.preventDefault();
 
-  //   //비밀번호
-  //   if (!pwReg.test($("#password").val())) {
-  //     $("#password").focus();
-  //     return false;
-  //   }
-  //   //비밀번호 확인
-  //   if ($("#password").val() !== $("#passwordCheck").val()) {
-  //     $("#passwordCheck").focus();
-  //     return false;
-  //   }
-  //   // 아이디랑 비밀번호랑 같은지
-  //   if ($("#id").val() == ($("#password").val())) {
-  //     $("#password").focus();
-  //     return false;
-  //   }
-  //   //이름
-  //   if (!nameReg.test($("#name").val())) {
-  //     $("#name").focus();
-  //     return false;
-  //   }
+    // //아아디
+    // if ($("#id").val() == "") {
+    //   alert("아이디를 입력해주세요!!");
+    //   $("#id").focus();
+    //   return false;
+    // }
 
-  //   //이메일
-  //   if (!emailReg.test($("#email").val())) {
-  //     //  $("#email").val("");
-  //     $("#email").focus();
-  //     return false;
-  //   }
-  //   if ($("#CertiFicationNumber").val() == "") {
-  //     $("#CertiFicationNumber").focus();
-  //     return false;
-  //   } else {
-  //     $("#emailMessage").hide();
-  //   }
+    //아이디 테스트
+    if (!idReg.test($("#id").val())) {
+      alert("아이디를 다시 입력해주세요!!");
+      $("#id").focus();
+      return false;
+    }
 
-  //   if ($("#CertiFicationNumber").val() !== "") {
-  //     var authenNum = $('#CertiFicationNumber').val();
-  //     $.ajax({
-  //       url: "/member/authen",
-  //       type: "post",
-  //       data: {
-  //         "authenNum": authenNum
-  //       },
-  //       success: function (data) {
-  //         if (data == 1) {
+    //비밀번호
+    if (!pwReg.test($("#password").val())) {
+      alert("비밀번호를 입력해주세요!!");
+      $("#password").focus();
+      return false;
+    }
+    //비밀번호 확인
+    if ($("#password").val() !== $("#passwordCheck").val()) {
+      alert("비밀번호 확인을 다시 입력해주세요!!!");
+      $("#passwordCheck").focus();
+      return false;
+    }
+    // 아이디랑 비밀번호랑 같은지
+    if ($("#id").val() == ($("#password").val())) {
+      $("#password").focus();
+      return false;
+    }
+    //이름
+    if (!nameReg.test($("#name").val())) {
+      alert("이름을 다시 입력해주세요!!");
+      $("#name").focus();
+      return false;
+    }
 
-  //           $('.join-form').submit();
-  //         } else {
-  //           $("#CertiFicationNumber").val("");
-  //           alert("인증번호를 정확히 입력해주세요.");
-  //           return false;
-  //         }
-  //       },
-  //       error: function () {
-  //         console.log("실패")
-  //       }
-  //     })
-  //   }
-  // });
-  //회원가입 전송
+    // 닉네임
+    if(!nicknameReg.test($("#nickname").val())){
+      alert("닉네임을 다시 입력해주세요!!");
+      return false;
+    }
+
+    //기관명
+    if($("#org_name").val()==""){
+      alert("기관명을 입력해주세요!!");
+      $("#org_name").focus();
+      return false;
+    }
+
+    // 휴대폰 번호
+    if (!phnumReg.test($("#phnum").val())) {
+      alert("휴대폰 번호를 입력해주세요!!");
+      $("#phnum").focus();
+      return false;
+    }
+
+    //이메일
+    if (!emailReg.test($("#email").val())) {
+      alert("이메일을 다시 입력해주세요!!");
+      $("#email").focus()
+      return false;
+    }
+    //     if ($("#CertiFicationNumber").val() == "") {
+    //       $("#CertiFicationNumber").focus();
+    //       return false;
+    //     } else {
+    //       $("#emailMessage").hide();
+    //     }
+
+    //   if ($("#CertiFicationNumber").val() !== "") {
+    //     var authenNum = $('#CertiFicationNumber').val();
+    //     $.ajax({
+    //       url: "/member/authen",
+    //       type: "post",
+    //       data: {
+    //         "authenNum": authenNum
+    //       },
+    //       success: function (data) {
+    //         if (data == 1) {
+
+    //           $('.join-form').submit();
+    //         } else {
+    //           $("#CertiFicationNumber").val("");
+    //           alert("인증번호를 정확히 입력해주세요.");
+    //           return false;
+    //         }
+    //       },
+    //       error: function () {
+    //         console.log("실패")
+    //       }
+    //     })
+    //   }
+  }); //submit
 
   //======================================================================================================================//
 
@@ -88,7 +113,7 @@ $(document).ready(function () {
     console.log("user_id:", user_id);
     if (user_id == "") {
       $("#idMessage").show();
-      $("#idMessage").text("아이디를 입력해주세요.");
+      $("#idMessage").text("아이디를 입력해주세요!");
       return false;
     }
     $.ajax({
@@ -122,9 +147,9 @@ $(document).ready(function () {
   });
 
   $('#nickname').on('blur', function (event) {
-    var user_nick=$("#nickname").val();
+    var user_nick = $("#nickname").val();
     console.log("user_nick : ", user_nick);
-    if(user_nick==""){
+    if (user_nick == "") {
       $("#nicknameMessage").show();
       $("#nicknameMessage").text("닉네임을 입력해주세요.");
       return false;
@@ -136,27 +161,27 @@ $(document).ready(function () {
         nickname: user_nick
       },
       dataType: 'json',
-      success: function(nick){
-          console.log("nick cnt ::: ", nick);
-          if(nick==1){
-            $("#nicknameMessage").show();
-            $("#nicknameMessage").text("이미 가입된 별명입니다.");
-            $("#nickname").val("");
-            return false;
-          }else if(!nicknameReg.test(user_nick)){
-            $("#nicknameMessage").show();            
-            $("#nicknameMessage").text("별명은 한글 영어 숫자로 이루어진 5~10글자로 입력해주세요.");
-            return false;
-          }else {
-            $("#nicknameMessage").hide();
-            return false;
-          }
-      },//end-success
-      error: function(){
+      success: function (nick) {
+        console.log("nick cnt ::: ", nick);
+        if (nick == 1) {
+          $("#nicknameMessage").show();
+          $("#nicknameMessage").text("이미 가입된 별명입니다.");
+          $("#nickname").val("");
+          return false;
+        } else if (!nicknameReg.test(user_nick)) {
+          $("#nicknameMessage").show();
+          $("#nicknameMessage").text("별명은 한글 영어 숫자로 이루어진 5~10글자로 입력해주세요.");
+          return false;
+        } else {
+          $("#nicknameMessage").hide();
+          return false;
+        }
+      }, //end-success
+      error: function () {
         console.log("닉네임에서 에러발생")
-      }//end-error
-    });//ajax
-  });//nick
+      } //end-error
+    }); //ajax
+  }); //nick
 
   $('#password').on('blur', function (event) {
     if ($('#password').val() === "") {
@@ -225,9 +250,9 @@ $(document).ready(function () {
   });
 
   $('#email').on('blur', function (event) {
-    var user_email = $('#email').val();      
+    var user_email = $('#email').val();
     console.log("user_email : ", user_email);
-    
+
     if (user_email === "") {
       $("#emailMessage").show();
       $("#emailMessage").text("이메일을 입력해주세요.");
@@ -284,7 +309,7 @@ $(document).ready(function () {
       }
     })
   }
-  
+
   function authentiCation() {
     var authenNum = $('#CertiFicationNumber').val();
     $.ajax({
