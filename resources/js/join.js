@@ -3,6 +3,7 @@ $(document).ready(function () {
   var idReg = /^[a-zA-Z0-9]{6,10}$/;
   var pwReg = /^[a-zA-Z0-9]{6,10}$/;
   var nameReg = /^[가-힣]+$/;
+  var orgReg = /^[가-힣\s]+$/; //한글+공백   
   var nicknameReg = /^[ㄱ-ㅎ|가-힣|a-z|A-Z|0-9|\*]+$/;
   var emailReg = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
   var phnumReg = /^01([0|1|6|7|8|9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
@@ -113,7 +114,7 @@ $(document).ready(function () {
     console.log("user_id:", user_id);
     if (user_id == "") {
       $("#idMessage").show();
-      $("#idMessage").text("아이디를 입력해주세요!");
+      $("#idMessage").text("아이디를 입력해주세요.");
       return false;
     }
     $.ajax({
@@ -182,6 +183,21 @@ $(document).ready(function () {
       } //end-error
     }); //ajax
   }); //nick
+  
+  $("#org_name").on("blur", function(event){
+    if($("#org_name").val()===""){
+      $("#org_nameMessage").show();
+      $("#org_nameMessage").text("기관명을 입력해주세요.");
+      return false;
+    }else if(!orgReg.test($("#org_name").val())){
+      $("#org_nameMessage").show();
+      $("#org_nameMessage").text("빈칸을 포함한 한글을 입력해주세요.");
+      return false;
+    }else{
+      $("#org_nameMessage").hide();
+      return false;
+    }
+  });
 
   $('#password').on('blur', function (event) {
     if ($('#password').val() === "") {
