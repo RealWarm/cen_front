@@ -96,3 +96,7 @@ body {
   font-weight: var(--weight-semi-bold);
 }
 
+.card-img-top.ffix{
+  height: 220px;
+  /* height: 100%; */
+}

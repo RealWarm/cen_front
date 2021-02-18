@@ -55,7 +55,11 @@ html{
 }
 
 body {
-  padding-top: 100px;
+  padding-top: 100px;  
+}
+
+.ct_body{
+  margin-bottom: 140px;
 }
 
 .container.center{
@@ -83,6 +87,7 @@ body {
 .price_address{
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   /* padding-left: 10px;
   padding-right: 10px; */
@@ -97,4 +102,11 @@ body {
   font-size: var(--font-small);  
   font-weight: var(--weight-semi-bold);
 }
+
+.card-img-top.two{
+  /* height: 100% !important */
+  height: 175px;
+}
+
+
 

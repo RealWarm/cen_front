@@ -58,6 +58,7 @@
 
     <div class="row">
 
+	
       <!-- left Side Bar -->
       <div class="col-lg-3">
         <h1 class="my-4">Category</h1>
@@ -67,42 +68,55 @@
           <a href="/category/greate?ct_num=300" class="list-group-item">도서/문구</a>
           <a href="/category/greate?ct_num=400" class="list-group-item">생활가구</a>
           <a href="/category/greate?ct_num=500" class="list-group-item">차량/오토바이</a>
+          <a href="/category/greate?ct_num=2200" class="list-group-item">기타/특수</a>
         </div>
       </div>
       <!-- /.col-lg-3 -->
 
-      <!-- center body -->
-      <div class="col-lg-9">
+	  <!-- center body -->      
+      <div class="col-lg-9 ct_body">
 
         <div class="detail__header">
-          <h2> 상세 카테고리 페이지</h2>
+          <h2> ${CData.ct_main} 카테고리 페이지</h2>
           <hr>
         </div>
 
         <div class="row">
 
-          <!-- Card -->
-          <div class="row">
+        	<!-- <c:forEach items="${list1}" var="list" begin="0" end="10"> -->
+		      <div class="col-lg-3 col-md-6 mb-4">
+		        <div class="card h-100">
+		          <a href="/sale/detail?num=${list.sb_num}" class="a__pic"><img class="card-img-top two" src="/resources/img/500x325/apple_pen1.png" alt="${list.sb_view}"></a>          
+		          <div class="card-body1">
+		            <h7 class="card-title1">${list.sb_name}</h7>            
+		            <hr>
+		            <div class="price_address">
+		              <!-- <h5 class="card-text1">${list.total_price} 원</h5>
+		              <h5 class="card-text2">${list.trade_area}</h5> -->
+                  <h5 class="card-text1">11111 원</h5>
+		              <h5 class="card-text2">신림동</h5>
+		            </div>		            
+		          </div>                
+		        </div><!-- card h-100 -->
+		      </div>
+			<!-- </c:forEach> -->
 
-            <c:forEach items="${mlist}" var="list" begin="0" end="10">
-              <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card h-100">
-                  <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                  <div class="card-body1">
-                    <h7 class="card-title1">${list.sb_name}</h7>
-                    <hr>
-                    <div class="price_address">
-                      <h5 class="card-text1">${list.total_price} 원</h5>
-                      <h5 class="card-text2">${list.trade_area}</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </c:forEach>
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <a href="/sale/detail?num=${list.sb_num}" class="a__pic"><img class="card-img-top two" src="/resources/img/main_banner1_1200x350.JPG" alt="${list.sb_view}"></a>          
+          <div class="card-body1">
+            <h7 class="card-title1">${list.sb_name}</h7>            
+            <hr>
+            <div class="price_address">
+              <h5 class="card-text1">${list.total_price} 원</h5>
+              <h5 class="card-text2">${list.trade_area}</h5>
+            </div>		            
+          </div>                
+        </div><!-- card h-100 -->
+      </div>
 
-          </div>
-          <!-- /.row -->
-          <!-- Card /.col-lg-3 -->
+
+
 
         </div>
         <!-- /.row -->
