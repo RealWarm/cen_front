@@ -19,7 +19,7 @@
 </head>
 <body>
 	<div class="membership-login-form">
-        <h2 class="login-logo"><img src="/resources/img/kor_used1.PNG" alt="korea" width="400px" height="80px"></h2>
+        <h2 class="login-logo"><a href="/"><img src="/resources/img/kor_used1.PNG" alt="korea" width="400px" height="80px"></a></h2>
         <form action="/login_Post" method="post" accept-charset="UTF-8">
             <div class="login-form">
                 <input type="text" name=userid placeholder="ID" title="아이디 입력">
