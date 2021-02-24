@@ -1,215 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
 <body>
-
-    <div class="layout-content mypage-wrap">
-        <div class="member-info-wrap">
-            <div class="join-title-main">
-                <h3 class="join-title">마이페이지</h3>
+    <div id="header">
+        <div class="header-inner">
+            <h1 class="header-logo"><a href=""><img src="img/logo.png" alt="콘시네마"></a></h1>
+            <div id="gnb">
+                <h2 class="blind">대표메뉴</h2>
+                    <ul class="nav">
+                        <li><a href="javascript:void(0)">3조</a></li>
+                        <li><a href="javascript:void(0)">최신개봉작</a></li>
+                        <li><a href="javascript:void(0)">공지사항</a></li>
+                    </ul>
             </div>
-            <div class="join-insert-wrap mypage-content">
-                <h4 class="mypage-subtitle">회원정보</h4>
-                <table class="member-info">
-                    <caption class="blind">회원정보내역</caption>
-                    <colgroup>
-                        <col style="width: 20%">
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <th scope="row">이름</th>
-                            <td>${login.name}</td>
-                            <th scope="row">닉네임</th>
-                            <td>${login.nickname}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">소속기관</th>
-                            <td>${login.org_name}</td>
-                            <th scope="row">최근거래지역</th>
-                            <td>${login.recent_address}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">전화번호</th>
-                            <td>${login.phnum}</td>
-                            <th scope="row">이메일</th>
-                            <td>${login.email}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <a href="member_modify" class="member-modify-btn">회원정보수정</a>
-        </div>
-
-        <!-- 등록정보, 찜내역 -->
-        <div class="ticket-history-wrap">
-
-
-            <!-- 선택 탭 -->
-            <ul class="tab">
-                <li class="current" data-tab="tab1"><a href="javascript:void(0);">판매중</a></li>
-                <li data-tab="tab2"><a href="javascript:void(0);">판매완료</a></li>
-                <li data-tab="tab3"><a href="javascript:void(0);">찜한내역</a></li>
+            <ul class="user-menu">
+                <li><a href="">로그인</a></li>
+                <li><a href="">회원가입</a></li>
             </ul>
-
-            <!-- 판매중인 상품 -->
-            <div id="tab1" class="tabcontent current">
-                <table class="ticket-history">
+        </div>
+    </div>
+    <div class="main-join-wrap">
+        <form class="join-form" action="#" method="POST">
+            <div class="join-title-main">
+                <h2 class="join-title">회원정보 수정</h2>
+            </div>
+            <div class="join-insert-wrap">
+                <table class="join-table">
+                    <caption class="blind">회원가입 정보입력</caption>
                     <colgroup>
-                        <col style="width: 15%">
-                        <col style="width: 18%">
-                        <col style="width: 10%">
-                        <col style="width: 18%">
-                        <col style="width: 18%">
-                        <col style="width: 10%">
-                        <col style="width: 10%">
+                        <col style="width:20%">
                     </colgroup>
-                    <thead>
-                        <tr>
-                            <th>게시글번호</th>
-                            <th>제 목</th>
-                            <th>작성자</th>
-                            <th>가 격</th>
-                            <th>진행변경</th>
-                            <th>수정하기</th>
-                            <th>삭제하기</th>
-                        </tr>
-                    </thead>
-
                     <tbody>
-                        <c:forEach items="${list1}" var="list1" varStatus="status">
-                            <tr>
-                                <td class="reservation-num">${list1.sb_num}</td>
-                                <td>${list1.sb_name}</td>
-                                <td>${list1.sb_nickname}</td>
-                                <td>${list1.total_price}</td>
-                                <td>
-                                    <form action="" method="POST">
-                                        <select name="trade_progress" id="pro">
-                                            <option value="판매중">판 매 중</option>
-                                            <option value="예약중">예 약 중</option>
-                                            <option value="판매완료">판매완료</option>
-                                        </select>
-                                        <br><br>
-                                        <button type="submit" class="mypage-btn">수 정 하 기</button>
-                                    </form>
-                                </td>
-                                <td><a class="mypage-btn modify">게시글 수정</a></td>
-                                <td><button class="mypage-btn cancel">게시글 삭제</button></td>
-                            </tr>
-                        </c:forEach>
+                        <tr>
+                            <th scope="row">
+                                아이디
+                            </th>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="user_pw">비밀번호</label></th>
+                            <td>
+                                <input type="password" title="아이디" id="user_pw" name="" required="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="user_check_pw">비밀번호 확인</label></th>
+                            <td>
+                                <input type="password" title="비밀번호 확인" id="user_check_pw" name="" required="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>이름</th>
+                            <td>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="user_phone">휴대폰</label></th>
+                            <td>
+                                <input type="phone" title="휴대폰" id="user_phone" name="" required="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><label for="user_email">이메일</label></th>
+                            <td>
+                                <input type="email" id="user_email" name="" required="" placeholder='joe@example.com'>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
-
-            <!-- 지난내역 조회 -->
-            <div id="tab2" class="tabcontent">
-                <table class="ticket-history">
-                    <colgroup>
-                        <col style="width: 15%">
-                        <col style="width: 18%">
-                        <col style="width: 10%">
-                        <col style="width: 18%">
-                        <col style="width: 18%">
-                        <col style="width: 10%">
-                        <col style="width: 10%">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>예매번호</th>
-                            <th>영화명</th>
-                            <th>영화관</th>
-                            <th>상영일시</th>
-                            <th>예매일</th>
-                            <th>좌석번호</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${list2}" var="list2" varStatus="status">
-                            <tr>
-                                <td class="reservation-num">${list2.reservation_num}</td>
-                                <td>${list2.title}</td>
-                                <td>${list2.local_info_dist}</td>
-                                <td class="movie_start_time">${list2.movie_start_time}</td>
-                                <td>${list2.reservation_date}</td>
-                                <td>${list2.seat_location}</td>
-
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
+            <div class="join-button-wrap">
+                <input type="submit" value="수정" class="join-button join-submit">
+                <a href="#" class="join-button member-delete-btn">회원탈퇴</a>
             </div>
-
-            <!-- 판매완료 상품 -->
-            <div id="tab3" class="tabcontent">
-                <table class="ticket-history">
-                    <caption class="blind">지난 내역 정보</caption>
-                    <colgroup>
-                        <col style="width: 15%">
-                        <col style="width: 18%">
-                        <col style="width: 10%">
-                        <col style="width: 18%">
-                        <col style="width: 18%">
-                        <col style="width: 10%">
-                        <col style="width: 10%">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>예매번호</th>
-                            <th>영화명</th>
-                            <th>영화관</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach items="${list3}" var="list3" varStatus="status">
-                            <tr>
-                                <td class="reservation-num">${list3.reservation_num}</td>
-                                <td>${list3.title}</td>
-                                <td>${list3.local_info_dist}</td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
+        </form>
+    </div>
+    <div id="footer">
+        <div class="footer-inner">
+            <div class="footer-menu-area">
+                <h4 class="blind">하단메뉴</h4>
+                <ul class="fnb">
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">개인정보 처리방침</a></li>
+                </ul>
             </div>
-
+            <div class="footer-address">
+                <p class="address-text">서울특별시 강남구 도산대로 156, 2층 메가박스중앙(주) (논현동, 중앙엠앤비사옥)</p>
+                <p class="address-text">제작자 홍길동 홍길동</p>
+            </div>
+            <div class="footer-copyright"><span>Copyright 2019 by acorn, Inc. All rights reserved</span></div>
         </div>
     </div>
 
-    <script>
-        $(document).ready(function () {
-            $('.mypage-btn.').on('click', function () {
-                //시간 가져옴
-                var movie_start_time = $(this).parent('td').siblings('.movie_start_time').text();
-
-                if (confirm("삭제하시겠습니까? ")) { //alert창				
-                    var reservation_num = $(this).parent('td').siblings('.reservation-num').text();
-                    console.log(reservation_num);
-                    $.ajax({
-                        url: '/member/mypage/delete',
-                        type: 'post',
-                        data: {
-                            "reservation_num": reservation_num
-                        },
-                        dataType: 'json',
-                        success: function (data) {
-                            console.log('aaa');
-                        }, //end-success
-                        error: function () {
-                            console.log("실패");
-                        } //end-error
-                    }); //ajax
-                    window.location.href = "mypage"
-                } //if
-
-            }) //mypage-btn
-
-        }); //document
-
-        $(function () {
-            $('ul.tab li').click(function () {
-                var activeTab = $(this).attr('data-tab');
-                $('ul.tab li').removeClass('current');
-                $('.tabcontent').removeClass('current');
-                $(this).addClass('current');
-                $('#' + activeTab).addClass('current');
-            });
-        });
-    </script>
-
 </body>
+
+</html>

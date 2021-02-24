@@ -23,10 +23,14 @@
 
         <!-- 중앙입력란 -->
         <form class="sale__regist__form" method="POST" action="/sale/saleregist" enctype="multipart/form-data">
+            <input type="hidden" name="sb_num" value="${detail.sb_num}">            
             <div class="info__container_inner">
                 <table class="tbl__total">
                     <tbody>
                         <!-- image -->
+                        <tr>
+                            
+                        </tr>
                         <tr>
                             <th class="tag"><label for="upload__box">상품이미지<span class="tag__star">*</span></label></th>
                             <th class="inner">
@@ -46,7 +50,6 @@
                                             (개당 이미지 최대 10M)
                                         </p>
                                     </div>
-
                                 </div>
                             </th>
                         </tr>
